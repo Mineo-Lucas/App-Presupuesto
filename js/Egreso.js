@@ -1,4 +1,4 @@
-class egreso extends dato(){
+class egreso extends dato{
     static contadoregreso=0;
     
     constructor(descripcion,valor){

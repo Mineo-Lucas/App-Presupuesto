@@ -1,4 +1,4 @@
-class ingreso extends dato(){
+class ingreso extends dato{
     static contadorIngreso=0;
     
     constructor(descripcion,valor){
