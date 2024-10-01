@@ -10,6 +10,7 @@ const egresos= [
 
 let cargarApp = () =>{
     cargarCabezero()
+    CargarIngresos()
 }
 
 let totalIngreso= () =>{
@@ -45,4 +46,28 @@ const formatoMoneda = (valor) =>{
 const formatoPorcentaje = (valor) =>{
     valor.toLocaleString('es-AR',{style:'percent', minimumFractionDigits:2})
     return valor
+}
+
+//revisar
+const CargarIngresos =() =>{
+    let ingresosHTML= '';
+    for(ingresoS of ingresos){
+        ingresosHTML += CrearIngresosHTML(ingresoS)
+    }
+    document.getElementById(listaIngresos).innerHTML = ingresosHTML;
+}
+
+const CrearIngresosHTML= (ingresoS)=>{
+    let ingresoFinalHTML = `<div class="elemento limpiarEstilos">
+     <div class="elemento_descripcion">${ingresoS.descripcion}</div>
+        <div class="derecha limpiarEstilos">
+                        <div class="elemento_valor">${ingresoS.valor}</div>
+                        <div class="elemento_eliminar">
+                            <button class="elemento_eliminar--btn">
+                                <ion-icon name="close-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+        </div>`
+        return ingresoFinalHTML
 }
